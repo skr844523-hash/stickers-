@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#03140c"><meta name="description" content="حوّل صور وروابط ملصقات تيليجرام إلى ملفات جاهزة للاستيراد">
+<link rel="manifest" href="./manifest.json"><link rel="icon" href="./icon.svg"><link rel="stylesheet" href="./style.css">
+<title>Sticker ZIP Pro</title>
+</head>
+<body>
+<header class="header"><div class="logo">🚀 <div><h1>Sticker <b>ZIP Pro</b></h1><p>من الرابط إلى ملف ملصقات جاهز</p></div></div><button id="install" class="small hidden">تثبيت التطبيق</button></header>
+<main>
+<section class="panel">
+<h2>🔗 رابط الصور أو حزمة تيليجرام</h2>
+<div class="urlrow"><input id="sourceUrl" type="url" placeholder="https://t.me/addstickers/..." dir="ltr"><button id="importBtn" class="secondary">استيراد</button></div>
+<p class="hint">يدعم روابط الصور المباشرة، وروابط حزم تيليجرام العامة عند إعداد واجهة الخادم (API).</p>
+<div class="or">أو أضف الصور من هاتفك</div><label class="filebtn">＋ اختيار صور متعددة<input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden></label>
+</section>
+<section class="panel">
+<div class="heading"><h2>🖼️ الملصقات</h2><span id="count" class="pill">0 ملصق</span></div>
+<div id="gallery" class="gallery"><div class="empty">أضف صورًا أو استورد حزمة لعرض الملصقات هنا.</div></div>
+<div class="row between"><span class="hint">الحد الأقصى: 120 ملصقًا ثابتًا</span><button id="clear" class="ghost">مسح الكل</button></div>
+</section>
+<section class="panel">
+<h2>⚙️ إعداد الحزمة</h2>
+<label for="title">اسم الحزمة</label><input id="title" class="textinput" maxlength="64" value="My Stickers" dir="auto">
+<label for="author">اسم المنشئ</label><input id="author" class="textinput" maxlength="64" value="Sticker ZIP" dir="auto">
+<label class="check"><input id="convert" type="checkbox" checked> ضبط الصور على 512×512 وتحويلها إلى WebP</label>
+<div class="actions"><button id="makeWastickers" class="primary">📦 إنشاء ملف .wastickers</button><button id="makeZip" class="secondary">تنزيل ZIP عادي</button></div>
+<div class="progress hidden" id="progress"><div id="bar"></div></div><p id="status" class="status" role="status">جاهز — أضف صورًا للبدء.</p>
+<div id="result" class="result hidden"></div>
+</section>
+<section class="panel">
+<h2>📲 فتح الملف في Sticker Maker</h2>
+<p class="hint">بعد تنزيل ملف <b>.wastickers</b> افتح مدير الملفات في أندرويد، واضغط على الملف أو اختر «مشاركة» ثم Sticker Maker. قبول الملف يعتمد على إصدار التطبيق والجهاز.</p>
+<a class="playlink" href="https://play.google.com/store/apps/details?id=com.marsvard.stickermakerforwhatsapp" target="_blank" rel="noopener">فتح صفحة Sticker Maker على Google Play ↗</a>
+</section>
+</main>
+<nav class="nav"><a class="active" href="#">⌂<small>الرئيسية</small></a><a href="#gallery">▦<small>ملصقاتي</small></a><a href="#result">⇩<small>التصدير</small></a></nav>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script><script src="./app.js"></script>
+</body></html>
